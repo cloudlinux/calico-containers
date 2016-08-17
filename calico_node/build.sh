@@ -30,9 +30,14 @@ apk add --virtual temp python-dev libffi-dev py-pip alpine-sdk curl
 curl -L https://github.com/projectcalico/confd/releases/download/v0.10.0-scale/confd.static -o /sbin/confd
 
 # Copy patched BIRD daemon with tunnel support.
-curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/bird -o /sbin/bird
-curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/bird6 -o /sbin/bird6
-curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/birdcl -o /sbin/birdcl
+#curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/bird -o /sbin/bird
+#curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/bird6 -o /sbin/bird6
+#curl -L https://github.com/projectcalico/calico-bird/releases/download/v0.1.0/birdcl -o /sbin/birdcl
+# Temporary replace bird daemon with cloudlinux patched version
+# TODO: Remove when patch will be in upstream
+curl -L https://github.com/cloudlinux/calico-bird/releases/download/v0.1.1/bird -o /sbin/bird
+curl -L https://github.com/cloudlinux/calico-bird/releases/download/v0.1.1/bird6 -o /sbin/bird6
+curl -L https://github.com/cloudlinux/calico-bird/releases/download/v0.1.1/birdcl -o /sbin/birdcl
 chmod +x /sbin/*
 
 # Install Felix and libcalico
