@@ -52,7 +52,7 @@ pip install urllib3==1.17
 # Patched felix - support for snat rules for kuberdock public IP's
 # Patched libcalico - cherrypicked fix for overriding DefaultEndpointToHostAction
 # (5e046b74418bf57ef89749e5110ccf00c9d5689b)
-pip install git+https://github.com/cloudlinux/felix.git@1.4.1b2-kd
+pip install git+https://github.com/cloudlinux/felix.git@1.4.1b2-kd-tmp-snat-fix
 pip install git+https://github.com/cloudlinux/libcalico.git@v0.17.0-1
 # Output the python library list
 pip list > libraries.txt
